@@ -1,36 +1,30 @@
 /**
- * Clase pakiman
+ * [DIR_IMAGENES Constante para el directorio de imagenes]
+ * @type {String}
  */
-class Pakiman {
+var DIR_IMAGENES = 'img';
 
-  /**
-   * constructor
-   * @param  {String}   pNombre   Nombre que se le asignará al objeto
-   * @param  {Number}   pVida     Cantidad de vida que tendrá el objeto
-   * @param  {Number}   pAtaque   Ataque que tendrá el objeto
-   * @return {none}               No hay retorno
-   */
-  constructor(pNombre, pVida, pAtaque) {
-    //asigno el parametro a los atributos
-    this.nombre = pNombre; //nombre
-    this.vida = pVida; //vida
-    this.ataque = pAtaque; //Ataque
-  }
+/**
+ * dataImagenes contiene los nombres de imagenes de los pakimanes
+ * @type {Array}
+ */
+var dataImagenes = [];
+//asigno los nombres de imagenes
+dataImagenes['Cauchin'] = 'vaca.png';
+dataImagenes['Pokacho'] = 'pollo.png';
+dataImagenes['Tocinauro'] = 'cerdo.png';
 
-  /**
-   * hablar función que mostrará
-   * @return {[type]} [description]
-   */
-  hablar() {
-    alert(this.nombre);
-  }
+/**
+ * dataColeccion - Array que contendrá la colección de pakimanes
+ * @type {Array}
+ */
+var dataColeccion = [];
+//agrego los pakimanes a colección
+dataColeccion.push(new Pakiman("Cauchin", 100, 30));
+dataColeccion.push(new Pakiman("Pokacho", 80, 50));
+dataColeccion.push(new Pakiman("Tocinauro", 120, 40));
 
+//itero la data para mostrarla en pantalla
+for (var itemPakiman of dataColeccion) {
+  itemPakiman.mostrar();
 }
-
-
-//instancio los pakimanes
-var objCauchin = new Pakiman("Cauchín", 100, 30);
-var objPokacho = new Pakiman("Pokacho", 80, 50);
-var objTocinauro = new Pakiman("Tocinauro", 120, 40);
-
-console.log(objCauchin, objPokacho, objTocinauro);
