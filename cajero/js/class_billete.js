@@ -15,11 +15,16 @@ class Billete {
     this.CANTIDAD = pCantidad;
   }
 
-  setCantidad(pValor) {
+
+  /**
+   * setCantidad Método que cambiará la cantidad de un billete
+   * @param {number}    pCantidad       Cantidad para el billete
+   */
+  setCantidad(pCantidad) {
     //valido si es un numero
-    if (Number.isInteger(pValor)) {
+    if (Number.isInteger(pCantidad)) {
       //parseo el valor
-      var cantidad = parseInt(pValor);
+      var cantidad = parseInt(pCantidad);
       //asigno la cantidad al atributo
       this.CANTIDAD = cantidad;
     }
